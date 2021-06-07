@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CountryDetails</string>
+    <string name="COUNTRY_NAME">name</string>
+    <string name="COUNTRY_FLAG">flag</string>
+    <string name="COUNTRY_REGION">region</string>
+    <string name="COUNTRY_SUBREGION">subregion</string>
+    <string name="COUNTRY_CAPITAL">capital</string>
+    <string name="COUNTRY_POPULATION">population</string>
+    <string name="COUNTRY_LANGUAGES">languages</string>
+    <string name="COUNTRY_BORDERS">borders</string>
+
+</resources>
