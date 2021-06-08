@@ -81,7 +81,25 @@ public final class QueryUtils {
                 String borders_string="";
 
                     borders_string=borders_string+ borders.join(",");
-
+                    String border_string_Conct="";
+                    for(int j=0;j<borders_string.length();j++)
+                    {
+                        if(borders_string.charAt(j)=='"')
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            border_string_Conct=border_string_Conct+borders_string.charAt(j);
+                        }
+                        if(j!=0)
+                        {
+                            if(borders_string.charAt(j-1)==',')
+                            {
+                                border_string_Conct=border_string_Conct+" ";
+                            }
+                        }
+                    }
 
                 JSONArray languages=jsonObject.getJSONArray("languages");
                 String languages_string="";
@@ -89,10 +107,11 @@ public final class QueryUtils {
                 {
                     JSONObject jsonObjectLang=languages.getJSONObject(j);
                     String langName=jsonObjectLang.optString("name");
-                    languages_string=languages_string+langName+", ";
+                    if(j!=languages.length()-1){languages_string=languages_string+langName+", ";}
+                    else {languages_string=languages_string+langName;}
                 }
                 countryEntries.add(new CountryEntry(name,capital,imageUrl,region,subregion,population,
-                        borders_string,languages_string));
+                        border_string_Conct,languages_string));
             }
 
 
